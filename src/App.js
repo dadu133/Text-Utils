@@ -30,7 +30,7 @@ import Navbar from "./Navbar";
 <Navbar mode={mode} click={togglemode}/>
 <Alert alert={alert}/>
  <Routes>
-  <Route  path="/" element Component={() =><TextForm title={"Enter the text you want to analyze"} mode={mode}/> }></Route>
+  <Route  path="/" element Component={() =><TextForm title={"Enter the text you want to analyze"} mode={mode} alert={showAlert}/> }></Route>
   <Route  path="/about" Component={()=><About mode={mode}/>}/>
 </Routes>  
 </>
