@@ -1,0 +1,66 @@
+.container {
+    background-color: cyan;
+    padding: 14px;
+  }
+  textarea{
+    width: 90%;
+    height:60%;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  div a {
+    text-decoration: none;
+    font-size: 1.5em;
+    color:blueviolet;
+  
+  
+    padding: 10px 15px;
+    text-align: center;
+  }
+  input[type='button']{
+  margin-right:18vw;
+  }
+  a:hover {
+    background-color: rgb(34, 190, 34);
+  }
+  
+  div #res {
+  
+    visibility: hidden;
+  }
+  
+  @media screen and (max-width:600px) {
+  
+  
+    div #res {
+      position: absolute;
+      right: 0.2em;
+      top: 8px;
+      ;
+      visibility: visible;
+      padding: 10px;
+      background-color: chartreuse;
+      color: white;
+      font-size: 10px;
+      ;
+    }
+  
+    .container.responsive a {
+      display: block;
+      text-align: left;
+    }
+  
+    div a:not(:first-child) {
+      display: none;
+    }
+  }
+  .textclass{
+    margin-left: 10%;
+  }
+  
+  
+  

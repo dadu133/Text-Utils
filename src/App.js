@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+// import About from "./About";
+import { useState } from "react";
+import Navbar from "./Navbar";
+ import TextForm from "./TextForm";
+ import Alert from "./Alert";
+ import {Routes,Route} from 'react-router-dom'
+ import About from "./About"
+ function App() {
+  const[alert,setAlert]=useState(null)
+  const[mode,setMode]=useState('light');
+  
+  let togglemode=()=>{
+          if (mode==='light') {
+            setMode('dark');
+            showAlert("Success:Dark mode has been enabled");
+          }
+          else{
+            setMode('light');
+            showAlert("Success:Light mode has been enabled");
+          }
+  }
+  let showAlert=(msg)=>{
+      setAlert(msg);
+      setTimeout(() => {
+        setAlert(null)
+      },1000);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
+<>
+<Navbar mode={mode} click={togglemode}/>
+<Alert alert={alert}/>
+ <Routes>
+  <Route  path="/" element Component={() =><TextForm title={"Enter the text you want to analyze"} mode={mode}/> }></Route>
+  <Route  path="/about" Component={()=><About mode={mode}/>}/>
+</Routes>  
+</>
+); 
+}   
+//<TextForm title={"Enter the text you want to analyze"} alert={showAlert} mode={mode}/> 
 export default App;
+
