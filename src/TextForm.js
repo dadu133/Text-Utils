@@ -5,26 +5,24 @@ function TextForm(props) {
     function clear() {
 
         setText('');
-        props.alert("Success: Clear the text");    
+        //props.alert("Success: Clear the text");    
     }
     let change=(event)=>{
         setText(event.target.value)
     }
     function upper() {
-    setText(text.toUpperCase());
-    props.alert("Success: Converted to Uppercase");
+        setText(text.toUpperCase())
+    
     }
     function lower() {
         setText(text.toLowerCase());
-        props.alert("Success: Converted to Lowercase");
     }
     function CopyText()
     {
         var str=document.getElementsByTagName('textarea')[0]
         str.select();
         navigator.clipboard.writeText(str.value);
-        props.alert("Success: Copies the text");
-    
+          props.alert("Success:Copies the text")
     }
     return(
         <>
